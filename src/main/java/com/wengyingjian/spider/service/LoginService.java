@@ -7,11 +7,12 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginService {
 
-    public void login() {
+    public void login() throws InterruptedException {
         WebDriver driver = BossContext.getWebDriver();
         driver.get(BossUrlConstants.URL_BOSS_RECOMMEND);
         addCookie(driver);
         driver.get(BossUrlConstants.URL_BOSS_RECOMMEND);
+        Thread.sleep(1000);
     }
 
     private static void addCookie(WebDriver driver) {

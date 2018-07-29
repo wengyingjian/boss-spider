@@ -6,12 +6,13 @@ public class SearchService {
 
 
     public void doSearch() throws InterruptedException {
+        //提示点击"知道了"
+        //*[@id="wrap"]/div[1]/div[2]/div[1]/div[2]/a
+        BossDriver.clickByXpath("//*[@id=\"wrap\"]/div[1]/div[2]/div[1]/div[2]/a");
         //点击筛选
         BossDriver.clickByXpath("//*[@id=\"wrap\"]/div[1]/div[2]/div[2]/div/span");
         //点击3-5年
         setExp3_5();
-        //提示点击"知道了"
-        BossDriver.clickByXpath("//*[@id=\"wrap\"]/div[1]/div[2]/div[1]/div[2]/a");
         Thread.sleep(1000);
     }
 
