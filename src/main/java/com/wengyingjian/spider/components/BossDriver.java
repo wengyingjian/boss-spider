@@ -27,6 +27,15 @@ public class BossDriver {
         }
     }
 
+    public static WebElement findElementByXpath(String xpath) {
+        try {
+            return BossContext.getWebDriver().findElement(By.xpath(xpath));
+        } catch (NoSuchElementException e) {
+            return null;
+        }
+    }
+
+
     public static void clickByXpath(String xpath) {
         clickByXpath(xpath, false, element -> true);
     }

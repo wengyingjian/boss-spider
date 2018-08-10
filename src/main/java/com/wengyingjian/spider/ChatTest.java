@@ -1,15 +1,12 @@
 package com.wengyingjian.spider;
 
 import com.wengyingjian.spider.components.BossDriver;
+import com.wengyingjian.spider.service.ChatService;
 import com.wengyingjian.spider.service.HelloService;
 import com.wengyingjian.spider.service.LoginService;
 import com.wengyingjian.spider.service.SearchService;
 
-/**
- * @author hzwengyingjian
- */
-public class Starter {
-
+public class ChatTest {
 
     public static void main(String[] args) throws InterruptedException {
         //初始化浏览器
@@ -18,16 +15,8 @@ public class Starter {
         //登录
         new LoginService().login();
 
-        //筛选查询
-        new SearchService().doSearch();
-
-        //打招呼
-        for (int i = 1; i < 102; i++) {
-            System.out.println("current=" + i);
-            new HelloService().sayHello(i);
-        }
+        new ChatService().switchTo().send(1, "你好", "简历已收到");
 
         BossDriver.close();
     }
-
 }
