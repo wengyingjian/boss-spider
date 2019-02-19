@@ -14,9 +14,9 @@ public class HelloService {
         Thread.sleep(1000);
     }
 
-
+    //获取打招呼按钮的xpath
     private String getSayHelloXpath(int index) {
-        return "//*[@id=\"recommend-list\"]/div[1]/ul/li[" + index + "]/div[1]/button";
+        return "//*[@id=\"recommend-list\"]/div[1]/ul/li[" + index + "]/div[1]/button[2]";
     }
 
 

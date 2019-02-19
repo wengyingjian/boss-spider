@@ -61,7 +61,6 @@ public class BossDriver {
         }
     }
 
-
     public interface Function {
         boolean click(WebElement element);
     }
