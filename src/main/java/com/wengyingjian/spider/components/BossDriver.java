@@ -15,7 +15,7 @@ public class BossDriver {
         BossContext.setWebDriver(webDriver);
     }
 
-    public static void close(){
+    public static void close() {
         BossContext.getWebDriver().close();
     }
 
@@ -54,6 +54,14 @@ public class BossDriver {
         //滚动
         if (scroll) {
             ((JavascriptExecutor) BossContext.getWebDriver()).executeScript("arguments[0].scrollIntoView();", element);
+        }
+        //有则关闭提示
+        try {
+            ////*[@id="container"]/div[2]/div[2]/div/span/a
+            Thread.sleep(200);
+            findElement(By.xpath("//*[@id=\"container\"]/div[2]/div[2]/div/span/a")).click();
+        } catch (Exception e) {
+
         }
         //点击
         if (function.click(element)) {
